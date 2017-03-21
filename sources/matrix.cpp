@@ -83,7 +83,7 @@ Matrix& Matrix:: operator = (const Matrix &C)
 	column = C.column;
 	return *this;
 }
-bool Matrix::operator == (const Matrix &C)
+bool Matrix::operator == (const Matrix &C)const
 {
 	for (int i = 0; i < line; ++i)
 		for (int j = 0; j < column; ++j)
@@ -93,7 +93,7 @@ bool Matrix::operator == (const Matrix &C)
 			return false;
 		}
 }
-ostream& operator << (ostream &out, Matrix &C)
+ostream& operator << (ostream &out, const Matrix &C)
 {
 
 	for (int i = 0; i < C.line; ++i)
