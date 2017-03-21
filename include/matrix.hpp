@@ -19,8 +19,8 @@ public:
 	Matrix& operator = (const Matrix &C);
 	Matrix operator + (const Matrix B)const;
 	Matrix operator * (const Matrix B)const;
-	bool operator == (const Matrix &C);
-	friend ostream& operator << (ostream &out, Matrix &C);
+	bool operator == (const Matrix &C)const;
+	friend ostream& operator << (ostream &out, const Matrix &C);
 	friend istream& operator >> (istream &in, Matrix &C);
 	void scan(string)const;
 };
