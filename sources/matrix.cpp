@@ -35,11 +35,11 @@ Matrix::~Matrix()
 		delete[]A[i];
 	delete[]A;
 }
-int Matrix::line_()
+int Matrix::line_()const
 {
 	return line;
 }
-int Matrix::column_()
+int Matrix::column_()const
 {
 	return column;
 }
@@ -83,7 +83,7 @@ Matrix& Matrix:: operator = (const Matrix &C)
 	column = C.column;
 	return *this;
 }
-const bool Matrix::operator == (const Matrix &C)
+bool Matrix::operator == (const Matrix &C)
 {
 	for (int i = 0; i < line; ++i)
 		for (int j = 0; j < column; ++j)
@@ -93,7 +93,7 @@ const bool Matrix::operator == (const Matrix &C)
 			return false;
 		}
 }
-ostream& operator << (ostream &out, const Matrix &C)
+ostream& operator << (ostream &out, Matrix &C)
 {
 
 	for (int i = 0; i < C.line; ++i)
@@ -104,7 +104,7 @@ ostream& operator << (ostream &out, const Matrix &C)
 	}
 	return out;
 }
-istream& operator >> (istream &in, const Matrix &C)
+istream& operator >> (istream &in, Matrix &C)
 {
 	for (int i = 0; i < C.line; ++i)
 	for (int j = 0; j < C.column; ++j)
