@@ -43,7 +43,7 @@ int Matrix::column_()
 {
 	return column;
 }
-Matrix Matrix::operator + (Matrix B)const
+Matrix Matrix::operator + (const Matrix B)const
 {
 	Matrix C(line, column);
 	for (int i = 0; i < line; ++i)
@@ -53,7 +53,7 @@ Matrix Matrix::operator + (Matrix B)const
 	}
 	return C;
 }
-Matrix Matrix::operator * (Matrix B)const
+Matrix Matrix::operator * (const Matrix B)const
 {
 	Matrix C(line, B.column);
 	for (int i = 0; i < line; ++i)
